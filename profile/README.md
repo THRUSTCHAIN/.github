@@ -125,7 +125,8 @@ contracts has had an external audit.
 | **THRUSTswap** | the DeltaV THRUST exchange, forked from the Uniswap interface (GPL-3.0). Private until after deployment |
 | chain work | THRUST TNT: EVM chain research (subnet-evm, coreth, teleporter, Blast, Optimism and more) |
 
-Related: [deltavchain](https://github.com/deltavchain) · [THCHAIN](https://github.com/THCHAIN)
+Related: [interplanetaryfilesystem](https://github.com/interplanetaryfilesystem) (the IPFS development archive that deltavthrust.com's
+IPFS copy builds on) · [deltavchain](https://github.com/deltavchain) · [THCHAIN](https://github.com/THCHAIN)
 
 ## Security
 
