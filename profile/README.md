@@ -29,7 +29,7 @@ Every transaction is built by the page and signed in your own wallet. The pages 
 | page | |
 |---|---|
 | [/](https://deltavthrust.com) | the launch pad: price in USDC, market cap, liquidity, the lock, the rebase backlog |
-| [/price](https://deltavthrust.com/price) | **THRUST.oracle**: every THRUST pair read at one block, priced from reserves, exact to 18 decimals |
+| [/price](https://deltavthrust.com/price) | **THRUST.oracle**: every THRUST pair read at one block, priced from reserves, exact to 18 decimals. v1.1.2 adds xTHRUST on Injective and Arbitrum, reported as reserved until a pool exists |
 | [/chart](https://deltavthrust.com/chart) | price history, every pool, liquidity and locks |
 | [/cockpit](https://deltavthrust.com/cockpit) | the cockpit (above) |
 | [/narrative](https://deltavthrust.com/narrative) | THRUST.narrative: Captain Demiurge's flight plan |
@@ -37,9 +37,11 @@ Every transaction is built by the page and signed in your own wallet. The pages 
 | [/data/thrust-pairs.json](https://deltavthrust.com/data/thrust-pairs.json) | the THRUST.oracle feed: public, readable from any origin, refreshed every 5 minutes |
 
 - **Mirror:** [thrust.pythai.net](https://thrust.pythai.net).
-- **IPFS:** every release is pinned as CIDv1 and opened through `https://<cid>.ipfs.inbrowser.link/`. The
-  DNSLink record `_dnslink.deltavthrust.com` names the current release.
-- **Arweave:** the same bundle is prepared for the permaweb.
+- **Releases:** the live site is v0.9.0. v1.1.2 is tested and released, and waits for deployment.
+- **IPFS:** the publishing flow is built: each release will be pinned as CIDv1, opened through
+  `https://<cid>.ipfs.inbrowser.link/`, and named by the DNSLink record `_dnslink.deltavthrust.com`. No release has
+  been published to IPFS yet, and the DNSLink record is not set.
+- **Arweave:** the same bundle is built for the permaweb. It is not uploaded yet.
 
 ## The token: DeltaV THRUST
 
@@ -69,7 +71,7 @@ vote to sell.
 
 | pair | address | the LP tokens |
 |---|---|---|
-| **THRUST / WBNB** (main pool) | [`0x8bee7bc7167bace12371ab5f87adb1f4212b2bc7`](https://bscscan.com/address/0x8bee7bc7167bace12371ab5f87adb1f4212b2bc7) | **83.4% in the [Mudra Locker](https://bscscan.com/address/0xAE7E6CAbad8d80f0b4E1C4DDE2a5dB7201eF1252)**; 16.6% with the owner |
+| **THRUST / WBNB** (main pool) | [`0x8bee7bc7167bace12371ab5f87adb1f4212b2bc7`](https://bscscan.com/address/0x8bee7bc7167bace12371ab5f87adb1f4212b2bc7) | **83.3% in the [Mudra Locker](https://bscscan.com/address/0xAE7E6CAbad8d80f0b4E1C4DDE2a5dB7201eF1252)**; 16.6% with the owner |
 | THRUST / BTCB | [`0x8988b9e8266c894297b6f2fd5597a8ecfdf49774`](https://bscscan.com/address/0x8988b9e8266c894297b6f2fd5597a8ecfdf49774) | owner |
 | THRUST / ETH | [`0xf8ee40ee68024144df26f7162b2d1d8967e39f35`](https://bscscan.com/address/0xf8ee40ee68024144df26f7162b2d1d8967e39f35) | treasury |
 | THRUST / USDC | [`0x762e1925cc37ac085dc81732113e0eb1382c4d2b`](https://bscscan.com/address/0x762e1925cc37ac085dc81732113e0eb1382c4d2b) | treasury |
@@ -99,11 +101,15 @@ THRUST owner is the deployer. **Nothing is at these addresses yet. Do not send a
 | **ThrustAdapter** (xTHRUST, BSC) | `0xd7492003F82840D67d327B5C7f750a1Fe0932365` | locks THRUST when it leaves BSC and unlocks it when it comes home |
 | **xTHRUST** (every landing chain) | `0x74EcB05660D9432434c79c68311d6f2A46D0ee72` | minted when THRUST is locked, burned when it goes home: Ethereum, Blast, 0G, Injective, Arbitrum |
 | **PegPool** (Ethereum) | `0xCd89E5D79718140f5d8591b1ffdfc87e27d33493` | the bridge's own xTHRUST/WETH pool; the rebase on locked THRUST flows into it |
+| **THRUSTswap V2 factory** (Injective) | `0x57f844018636CffaA5362F04f3d4fe62725f82eA` | the official Uniswap V2 build, unmodified (GPL-3.0-or-later), since Injective has no Uniswap; Arbitrum uses Uniswap V2 as it is |
+| **THRUSTswap V2 router** (Injective) | `0x7B9D791b04964c3B625CEad48e6EE4E24BC9aFe0` | its router, paired with WINJ |
 
 **xTHRUST** is token for token: Σ xTHRUST on every chain equals what the adapter has outstanding, and that never exceeds
 the THRUST locked on BSC. PULSAR bridges like anyone else, with 2-of-3 signatures, and never sells. Before PULSAR receives
 xTHRUST on a chain, its own safe is recreated there at the same address with the same three keys. Once wired, every
-contract is sealed: no owner and no way to change the routes. The whole sequence has been rehearsed on forks.
+contract is sealed: no owner and no way to change the routes. The whole sequence has been rehearsed on local forks of
+BSC, Ethereum, Blast, Injective and Arbitrum, including a direct Injective → Arbitrum transfer and THRUSTswap pools on
+both. Nothing has been broadcast.
 
 GOLDEN RATIO, StargateRelay and THRUSTbus are built and tested, and none is deployed. None of the new contracts has had
 an external audit.
@@ -130,7 +136,7 @@ an external audit.
 | repo | |
 |---|---|
 | **THRUST** | the project: THRUST.oracle, the cockpit, login333, ThrustDAIO, THRUSTfund, xTHRUST, the release gate. Private until after deployment |
-| **THRUSTswap** | the DeltaV THRUST exchange, forked from the Uniswap interface (GPL-3.0). Private until after deployment |
+| **THRUSTswap** | the DeltaV THRUST exchange, forked from the Uniswap interface (GPL-3.0). It lists xTHRUST on Arbitrum; Injective needs a chain entry the interface does not have yet. Private until after deployment |
 | chain work | THRUST TNT: EVM chain research (subnet-evm, coreth, teleporter, Blast, Optimism and more) |
 
 Related: [interplanetaryfilesystem](https://github.com/interplanetaryfilesystem) (the IPFS development archive that deltavthrust.com's
