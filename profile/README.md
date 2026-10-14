@@ -29,7 +29,7 @@ Every transaction is built by the page and signed in your own wallet. The pages 
 | page | |
 |---|---|
 | [/](https://deltavthrust.com) | the launch pad: price in USDC, market cap, liquidity, the lock, the rebase backlog |
-| [/price](https://deltavthrust.com/price) | **THRUST.oracle**: every THRUST pair read at one block, priced from reserves, exact to 18 decimals. Built and waiting for deployment: xTHRUST readings on Injective and Arbitrum (reserved until a pool exists) and on Zilliqa EVM (planned, over the PULSAR peg), with each chain's own coin price checked against BSC |
+| [/price](https://deltavthrust.com/price) | **THRUST.oracle**: every THRUST pair read at one block, priced from reserves, exact to 18 decimals. Live: xTHRUST readings on Injective and Arbitrum (reserved until a pool exists) and on Zilliqa EVM (planned, over the PULSAR peg), with each chain's own coin price checked against BSC |
 | [/chart](https://deltavthrust.com/chart) | price history, every pool, liquidity and locks |
 | [/cockpit](https://deltavthrust.com/cockpit) | the cockpit (above) |
 | [/narrative](https://deltavthrust.com/narrative) | THRUST.narrative: Captain Demiurge's flight plan |
@@ -37,7 +37,7 @@ Every transaction is built by the page and signed in your own wallet. The pages 
 | [/data/thrust-pairs.json](https://deltavthrust.com/data/thrust-pairs.json) | the THRUST.oracle feed: public, readable from any origin, refreshed every 5 minutes |
 
 - **Mirror:** [thrust.pythai.net](https://thrust.pythai.net).
-- **Releases:** the live site is v0.9.0. v1.1.9 is tested and released, and waits for deployment. It brings a price board at /prices, joined chart candles connected by a price line and read hour by hour from the launch price, and daily visitor counts kept privately from the server's own logs: no cookies, no tracking script.
+- **Releases:** v1.2.0 is live on deltavthrust.com: the price board at /prices, joined chart candles connected by a price line and read hour by hour from the launch price, and daily visitor counts kept privately from the server's own logs (no cookies, no tracking script). Its IPFS copy is `bafybeiej4fqhhcwt3smjgzgbsboarsq6ccjcsmkgqhca23uwesd7vfbgty`; DNSLink is not set yet.
 - **IPFS:** the publishing flow is built: each release will be pinned as CIDv1, opened through
   `https://<cid>.ipfs.inbrowser.link/`, and named by the DNSLink record `_dnslink.deltavthrust.com`. No release has
   been published to IPFS yet, and the DNSLink record is not set.
