@@ -102,7 +102,6 @@ THRUST owner is the deployer. **Nothing is at these addresses yet. Do not send a
 | **xTHRUST** (every landing chain) | `0x74EcB05660D9432434c79c68311d6f2A46D0ee72` | minted when THRUST is locked, burned when it goes home: Ethereum, Blast, 0G, Injective, Arbitrum |
 | **PegPool** (Ethereum) | `0xCd89E5D79718140f5d8591b1ffdfc87e27d33493` | the bridge's own xTHRUST/WETH pool; the rebase on locked THRUST flows into it |
 | **THRUSTswap V2 factory** (Injective) | `0x57f844018636CffaA5362F04f3d4fe62725f82eA` | the official Uniswap V2 build, unmodified (GPL-3.0-or-later), since Injective has no Uniswap; Arbitrum uses Uniswap V2 as it is |
-| [thrustbridge](https://github.com/THRUSTCHAIN/thrustbridge) | ThrustBridge: the bridge mechanics (Stargate V2 bridge, StargateRelay with the VIP fee, xTHRUST over LayerZero V2). Private until deployment. |
 | **THRUSTswap V2 router** (Injective) | `0x7B9D791b04964c3B625CEad48e6EE4E24BC9aFe0` | its router, paired with WINJ |
 
 **xTHRUST** is token for token: Σ xTHRUST on every chain equals what the adapter has outstanding, and that never exceeds
@@ -138,6 +137,7 @@ an external audit.
 |---|---|
 | **THRUST** | the project: THRUST.oracle, the cockpit, login333, ThrustDAIO, THRUSTfund, xTHRUST, the release gate. Private until after deployment |
 | **THRUSTswap** | the DeltaV THRUST exchange, forked from the Uniswap interface (GPL-3.0). It lists xTHRUST on Arbitrum; Injective needs a chain entry the interface does not have yet. Private until after deployment |
+| **thrustbridge** | ThrustBridge, the bridge mechanics: the Stargate V2 bridge interface, StargateRelay with the BANKON and VIP fees, and xTHRUST over LayerZero V2, with tests and deploy scripts. Private until deployment. |
 | chain work | THRUST TNT: EVM chain research (subnet-evm, coreth, teleporter, Blast, Optimism and more) |
 
 Related: [interplanetaryfilesystem](https://github.com/interplanetaryfilesystem) (the IPFS development archive that deltavthrust.com's
