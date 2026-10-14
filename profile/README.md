@@ -37,7 +37,7 @@ Every transaction is built by the page and signed in your own wallet. The pages 
 | [/data/thrust-pairs.json](https://deltavthrust.com/data/thrust-pairs.json) | the THRUST.oracle feed: public, readable from any origin, refreshed every 5 minutes |
 
 - **Mirror:** [thrust.pythai.net](https://thrust.pythai.net).
-- **Releases:** v1.2.3 is live on deltavthrust.com: the price board at /prices, joined chart candles connected by a price line and read hour by hour from the launch price, and daily visitor counts kept privately from the server's own logs (no cookies, no tracking script). Its IPFS copy is `bafybeifcrskeeqaimradrqjgalgktidgbvuauazyuifjaninh2ut3c2ssi`; DNSLink is not set yet.
+- **Releases:** v1.2.4 is live on deltavthrust.com. The cockpit is now a console: a main display that expands to fill the canopy, the helm (throttle, route and bridge engage, fuel, landing beacons, VIP fee), a services lounge with an open berth, and COMMS headlines on THRUST / BNB and the bridge chains. Sign-in is sealed until the login perspective is delivered. /bridge shows the fee schedule and the VIP fee. The chart's candles are joined and read hour by hour from the launch price. IPFS copy `bafybeibqlam53f6kdp4nqix6el6d2zarw5rkbs543ckvnorn2znxsdkm4m`; DNSLink is not set yet.
 - **IPFS:** the publishing flow is built: each release will be pinned as CIDv1, opened through
   `https://<cid>.ipfs.inbrowser.link/`, and named by the DNSLink record `_dnslink.deltavthrust.com`. No release has
   been published to IPFS yet, and the DNSLink record is not set.
@@ -102,6 +102,7 @@ THRUST owner is the deployer. **Nothing is at these addresses yet. Do not send a
 | **xTHRUST** (every landing chain) | `0x74EcB05660D9432434c79c68311d6f2A46D0ee72` | minted when THRUST is locked, burned when it goes home: Ethereum, Blast, 0G, Injective, Arbitrum |
 | **PegPool** (Ethereum) | `0xCd89E5D79718140f5d8591b1ffdfc87e27d33493` | the bridge's own xTHRUST/WETH pool; the rebase on locked THRUST flows into it |
 | **THRUSTswap V2 factory** (Injective) | `0x57f844018636CffaA5362F04f3d4fe62725f82eA` | the official Uniswap V2 build, unmodified (GPL-3.0-or-later), since Injective has no Uniswap; Arbitrum uses Uniswap V2 as it is |
+| [thrustbridge](https://github.com/THRUSTCHAIN/thrustbridge) | ThrustBridge: the bridge mechanics (Stargate V2 bridge, StargateRelay with the VIP fee, xTHRUST over LayerZero V2). Private until deployment. |
 | **THRUSTswap V2 router** (Injective) | `0x7B9D791b04964c3B625CEad48e6EE4E24BC9aFe0` | its router, paired with WINJ |
 
 **xTHRUST** is token for token: Σ xTHRUST on every chain equals what the adapter has outstanding, and that never exceeds
