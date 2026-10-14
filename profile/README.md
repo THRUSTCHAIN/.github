@@ -37,7 +37,7 @@ Every transaction is built by the page and signed in your own wallet. The pages 
 | [/data/thrust-pairs.json](https://deltavthrust.com/data/thrust-pairs.json) | the THRUST.oracle feed: public, readable from any origin, refreshed every 5 minutes |
 
 - **Mirror:** [thrust.pythai.net](https://thrust.pythai.net).
-- **Releases:** v1.2.0 is live on deltavthrust.com: the price board at /prices, joined chart candles connected by a price line and read hour by hour from the launch price, and daily visitor counts kept privately from the server's own logs (no cookies, no tracking script). Its IPFS copy is `bafybeiej4fqhhcwt3smjgzgbsboarsq6ccjcsmkgqhca23uwesd7vfbgty`; DNSLink is not set yet.
+- **Releases:** v1.2.1 is live on deltavthrust.com: the price board at /prices, joined chart candles connected by a price line and read hour by hour from the launch price, and daily visitor counts kept privately from the server's own logs (no cookies, no tracking script). Its IPFS copy is `bafybeihswoib2baal6jq5tj4qzyzhuopkwnxjg73nwqncxr6up43puf5o4`; DNSLink is not set yet.
 - **IPFS:** the publishing flow is built: each release will be pinned as CIDv1, opened through
   `https://<cid>.ipfs.inbrowser.link/`, and named by the DNSLink record `_dnslink.deltavthrust.com`. No release has
   been published to IPFS yet, and the DNSLink record is not set.
