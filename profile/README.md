@@ -96,9 +96,17 @@ THRUST owner is the deployer. **Nothing is at these addresses yet. Do not send a
 | **ThrustDAIO** | `0xab68e5e68Ce944b0eAb17962F1285C2d392f8438` | the PULSAR triumvirate (2-of-3, 48 h timelock) with passenger signals (22,000 THRUST = 1 CLAIM, advisory) and the owner as guardian (veto only) |
 | **ThrustVoteBox** | `0x3CCaF379776D09dBBD1E261894dB38a7C35F574f` | the ballot box for `contract.vote` on gas-conscious chains; on BNB, passengers vote by signature |
 | **THRUSTfund** | `0x5275208BEb268409e7469944e406748dbA4Dca3a` | the timelock locker, extrapolated from LUVlocker |
+| **ThrustAdapter** (xTHRUST, BSC) | `0xd7492003F82840D67d327B5C7f750a1Fe0932365` | locks THRUST when it leaves BSC and unlocks it when it comes home |
+| **xTHRUST** (every landing chain) | `0x74EcB05660D9432434c79c68311d6f2A46D0ee72` | minted when THRUST is locked, burned when it goes home: Ethereum, Blast, 0G, Injective, Arbitrum |
+| **PegPool** (Ethereum) | `0xCd89E5D79718140f5d8591b1ffdfc87e27d33493` | the bridge's own xTHRUST/WETH pool; the rebase on locked THRUST flows into it |
 
-xTHRUST, PegPool, StargateRelay, GOLDEN RATIO and THRUSTbus are built and tested, and none is deployed. None of the new
-contracts has had an external audit.
+**xTHRUST** is token for token: Σ xTHRUST on every chain equals what the adapter has outstanding, and that never exceeds
+the THRUST locked on BSC. PULSAR bridges like anyone else, with 2-of-3 signatures, and never sells. Before PULSAR receives
+xTHRUST on a chain, its own safe is recreated there at the same address with the same three keys. Once wired, every
+contract is sealed: no owner and no way to change the routes. The whole sequence has been rehearsed on forks.
+
+GOLDEN RATIO, StargateRelay and THRUSTbus are built and tested, and none is deployed. None of the new contracts has had
+an external audit.
 
 ## Names: Unstoppable Domains
 
