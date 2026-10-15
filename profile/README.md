@@ -37,7 +37,7 @@ Every transaction is built by the page and signed in your own wallet. The pages 
 | [/data/thrust-pairs.json](https://deltavthrust.com/data/thrust-pairs.json) | the THRUST.oracle feed: public, readable from any origin, refreshed every 5 minutes |
 
 - **Mirror:** [thrust.pythai.net](https://thrust.pythai.net).
-- **Releases:** v1.2.9 is live on deltavthrust.com. **22,000 THRUST = 1 DAIO; VIP is 22,000 THRUST or more.** New: [/daio](https://deltavthrust.com/daio), DAIO as a Service: deploy a complete DAIO and DAIO, its vote token (name, symbol and mint number yours to set), then read and write any DAIO contract from its ABI. The cockpit looks out of the ship along the z-axis, with THRUSTstrate (depth out of the screen) for VIP; add-to-wallet buttons use the DeltaVerse coinlogos registry. Sign-in stays sealed until the login perspective is delivered. IPFS copy `bafybeiabp6ivwi2v7zgyidlyy4rx7wgsubuukxnccjdtkfa7uvdzlwb77q`; DNSLink is not set yet.
+- **Releases:** v1.3.0 is live on deltavthrust.com. New: [/all](https://deltavthrust.com/all), CHAIN ALL: bring ALL to any chain on allchain and receive its 1 ALL (one address everywhere, minted to the wallet that pays the gas). **22,000 THRUST = 1 DAIO; VIP is 22,000 THRUST or more.** New: [/daio](https://deltavthrust.com/daio), DAIO as a Service: deploy a complete DAIO and DAIO, its vote token (name, symbol and mint number yours to set), then read and write any DAIO contract from its ABI. The cockpit looks out of the ship along the z-axis, with THRUSTstrate (depth out of the screen) for VIP; add-to-wallet buttons use the DeltaVerse coinlogos registry. Sign-in stays sealed until the login perspective is delivered. IPFS copy `bafybeibq5djjahv5yi4hp7gsiqqob64kub547nlh4r4o2mnbwuyae7espm`; DNSLink is not set yet.
 - **IPFS:** the publishing flow is built: each release will be pinned as CIDv1, opened through
   `https://<cid>.ipfs.inbrowser.link/`, and named by the DNSLink record `_dnslink.deltavthrust.com`. No release has
   been published to IPFS yet, and the DNSLink record is not set.
@@ -139,7 +139,8 @@ an external audit.
 | **THRUSTswap** | the DeltaV THRUST exchange, forked from the Uniswap interface (GPL-3.0). It lists xTHRUST on Arbitrum; Injective needs a chain entry the interface does not have yet. Private until after deployment |
 | **thrustbridge** | ThrustBridge, the bridge mechanics: the Stargate V2 bridge interface, StargateRelay with the BANKON and VIP fees, and xTHRUST over LayerZero V2, with tests and deploy scripts. Private until deployment. |
 | **daio** | DAIO as a Service: DAIO, the vote token (22,000 THRUST = 1 DAIO), ThrustDAIO, ThrustVoteBox, and the deployer with an ABI console. Private until deployment. |
-| **thrustchain** | TNT, the explosive chain for THRUST and xTHRUST: a Polygon CDK chain on Ethereum with xTHRUST as gas (chain id 22000), built on the OpenBDK Kurtosis kit. Configured and validated; not running. Private for now. |
+| **allchain** | CHAIN ALL (ALL): 1 ALL on every chain of allchain, minted to the wallet that pays the gas; one address everywhere through Nick's CREATE2; the /all auto-deploy. Private until deployment. |
+| **thrustchain** | THRUSTCHAIN (TNT), the explosive chain for THRUST and xTHRUST: a Polygon CDK chain on Ethereum (chain id 22000) whose gas is THRUST TNT, with xTHRUST as the allchain asset; built on the OpenBDK Kurtosis kit, keys under the OVERLORD standard. Configured and validated; not running. Private for now. |
 | chain work | TNT research forks (subnet-evm, coreth, teleporter, Blast, Optimism and more) |
 
 Related: [interplanetaryfilesystem](https://github.com/interplanetaryfilesystem) (the IPFS development archive that deltavthrust.com's
