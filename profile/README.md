@@ -2,7 +2,7 @@
 
 # THRUSTCHAIN · DeltaV THRUST
 
-**A modular multistage launch vehicle on BNB Smart Chain. 22,000 THRUST = 1 CLAIM.**
+**A modular multistage launch vehicle on BNB Smart Chain. 22,000 THRUST = 1 DAIO.**
 
 [deltavthrust.com](https://deltavthrust.com) · [THRUST.oracle](https://deltavthrust.com/price) · [Cockpit](https://deltavthrust.com/cockpit) · [Buy $50 with USDC](https://pancakeswap.finance/swap?chain=bsc&inputCurrency=0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d&outputCurrency=0x969F60Bfe17962E0f061B434596545C7b6Cd6Fc4&exactField=input&exactAmount=50)
 
@@ -37,7 +37,7 @@ Every transaction is built by the page and signed in your own wallet. The pages 
 | [/data/thrust-pairs.json](https://deltavthrust.com/data/thrust-pairs.json) | the THRUST.oracle feed: public, readable from any origin, refreshed every 5 minutes |
 
 - **Mirror:** [thrust.pythai.net](https://thrust.pythai.net).
-- **Releases:** v1.2.6 is live on deltavthrust.com. The cockpit is a console: a main display that expands to fill the canopy, a price banner (Bitcoin, ETH, BNB, THRUST, BLAST, INJ, 0G; on/off), the helm, a services lounge with an open berth, and COMMS headlines. Built behind the sealed sign-in, opening when the login perspective is delivered: boarding and the pilot's seat (top up to VIP), the price board for every signed-in pilot, the chart and trade ($50 USDC and the 1,000,000 THRUST maximum buy) below 22,000 THRUST, and for VIP holders the THRUST Bridge route planner on chainmarketcap. /bridge shows the fee schedule and the VIP fee. IPFS copy `bafybeig6xjrqrw22de7z4adgdlfdyxmorevonqsfnbfnb5pmuiasbw7t3e`; DNSLink is not set yet.
+- **Releases:** v1.2.9 is live on deltavthrust.com. **22,000 THRUST = 1 DAIO; VIP is 22,000 THRUST or more.** New: [/daio](https://deltavthrust.com/daio), DAIO as a Service: deploy a complete DAIO and DAIO, its vote token (name, symbol and mint number yours to set), then read and write any DAIO contract from its ABI. The cockpit looks out of the ship along the z-axis, with THRUSTstrate (depth out of the screen) for VIP; add-to-wallet buttons use the DeltaVerse coinlogos registry. Sign-in stays sealed until the login perspective is delivered. IPFS copy `bafybeiabp6ivwi2v7zgyidlyy4rx7wgsubuukxnccjdtkfa7uvdzlwb77q`; DNSLink is not set yet.
 - **IPFS:** the publishing flow is built: each release will be pinned as CIDv1, opened through
   `https://<cid>.ipfs.inbrowser.link/`, and named by the DNSLink record `_dnslink.deltavthrust.com`. No release has
   been published to IPFS yet, and the DNSLink record is not set.
@@ -95,7 +95,7 @@ THRUST owner is the deployer. **Nothing is at these addresses yet. Do not send a
 
 | contract | reserved address | what it does |
 |---|---|---|
-| **ThrustDAIO** | `0xab68e5e68Ce944b0eAb17962F1285C2d392f8438` | the PULSAR triumvirate (2-of-3, 48 h timelock) with passenger signals (22,000 THRUST = 1 CLAIM, advisory) and the owner as guardian (veto only) |
+| **ThrustDAIO** | `0xab68e5e68Ce944b0eAb17962F1285C2d392f8438` | the PULSAR triumvirate (2-of-3, 48 h timelock) with passenger signals (22,000 THRUST = 1 DAIO, advisory) and the owner as guardian (veto only) |
 | **ThrustVoteBox** | `0x3CCaF379776D09dBBD1E261894dB38a7C35F574f` | the ballot box for `contract.vote` on gas-conscious chains; on BNB, passengers vote by signature |
 | **THRUSTfund** | `0x5275208BEb268409e7469944e406748dbA4Dca3a` | the timelock locker, extrapolated from LUVlocker |
 | **ThrustAdapter** (xTHRUST, BSC) | `0xd7492003F82840D67d327B5C7f750a1Fe0932365` | locks THRUST when it leaves BSC and unlocks it when it comes home |
@@ -138,6 +138,7 @@ an external audit.
 | **THRUST** | the project: THRUST.oracle, the cockpit, login333, ThrustDAIO, THRUSTfund, xTHRUST, the release gate. Private until after deployment |
 | **THRUSTswap** | the DeltaV THRUST exchange, forked from the Uniswap interface (GPL-3.0). It lists xTHRUST on Arbitrum; Injective needs a chain entry the interface does not have yet. Private until after deployment |
 | **thrustbridge** | ThrustBridge, the bridge mechanics: the Stargate V2 bridge interface, StargateRelay with the BANKON and VIP fees, and xTHRUST over LayerZero V2, with tests and deploy scripts. Private until deployment. |
+| **daio** | DAIO as a Service: DAIO, the vote token (22,000 THRUST = 1 DAIO), ThrustDAIO, ThrustVoteBox, and the deployer with an ABI console. Private until deployment. |
 | chain work | THRUST TNT: EVM chain research (subnet-evm, coreth, teleporter, Blast, Optimism and more) |
 
 Related: [interplanetaryfilesystem](https://github.com/interplanetaryfilesystem) (the IPFS development archive that deltavthrust.com's
