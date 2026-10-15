@@ -139,7 +139,8 @@ an external audit.
 | **THRUSTswap** | the DeltaV THRUST exchange, forked from the Uniswap interface (GPL-3.0). It lists xTHRUST on Arbitrum; Injective needs a chain entry the interface does not have yet. Private until after deployment |
 | **thrustbridge** | ThrustBridge, the bridge mechanics: the Stargate V2 bridge interface, StargateRelay with the BANKON and VIP fees, and xTHRUST over LayerZero V2, with tests and deploy scripts. Private until deployment. |
 | **daio** | DAIO as a Service: DAIO, the vote token (22,000 THRUST = 1 DAIO), ThrustDAIO, ThrustVoteBox, and the deployer with an ABI console. Private until deployment. |
-| chain work | THRUST TNT: EVM chain research (subnet-evm, coreth, teleporter, Blast, Optimism and more) |
+| **thrustchain** | TNT, the explosive chain for THRUST and xTHRUST: a Polygon CDK chain on Ethereum with xTHRUST as gas (chain id 22000), built on the OpenBDK Kurtosis kit. Configured and validated; not running. Private for now. |
+| chain work | TNT research forks (subnet-evm, coreth, teleporter, Blast, Optimism and more) |
 
 Related: [interplanetaryfilesystem](https://github.com/interplanetaryfilesystem) (the IPFS development archive that deltavthrust.com's
 IPFS copy builds on) · [deltavchain](https://github.com/deltavchain) · [THCHAIN](https://github.com/THCHAIN)
